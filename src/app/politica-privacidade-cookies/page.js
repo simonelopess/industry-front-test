@@ -8,7 +8,7 @@ export const metadata = {
 }
 
 export default async function Page() {
-  const api = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/politica-de-privacidade?populate=*`);
+  const api = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/politica-de-privacidade?populate=*`, { cache: "no-store" },);
 
   const { data } = await api.json()
   const policy = data
