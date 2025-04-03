@@ -6,7 +6,7 @@ export const metadata  = {
 export default async function Page() {
 
   console.log('process.env.NEXT_PUBLIC_BACKEND_URL',process.env.NEXT_PUBLIC_BACKEND_URL)
-    const api = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/about?populate=*`);
+    const api = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/about?populate=*`, { next: { revalidate: 60 } }); //revalidate in 60 seconds
     const { data } = await api.json();
     const about = data;
 
