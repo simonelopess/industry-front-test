@@ -4,7 +4,7 @@ export const metadata  = {
 }
 
 export default async function Page() {
-    const api = await fetch('http://localhost:1337/api/about?populate=*');
+    const api = await fetch(`${process.env.BACKEND_URL}/api/about?populate=*`);
     const { data } = await api.json();
     const about = data;
 
