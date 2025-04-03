@@ -12,8 +12,8 @@ export default async function Page() {
       <div className="font-[family-name:var(--font-geist-sans)]">
       <main className="w-full">
         {about && 
-          <div className="bg-cover bg-center h-80 flex items-center justify-center p-8" style={{ backgroundImage: `url(${about.banner.backgroundUrl})` }}>
-          <h1 className="text-white text-4xl" >{about.banner.title}</h1>
+          <div className="bg-cover bg-center h-80 flex items-center justify-center p-8" style={{ backgroundImage: `url(${about?.banner?.backgroundUrl})` }}>
+          <h1 className="text-white text-4xl" >{about?.banner?.title}</h1>
         </div>            
         }
       </main>

@@ -28,8 +28,8 @@ export default async function Page() {
           ))}
         <h2 className="text-black text-2xl text-center mt-8">{policy?.subtitle}</h2>
         <div className="max-w-4xl mx-auto px-4 py-8">
-          {policy.privacy &&
-            policy.privacy.map((text) => (
+          {policy?.privacy &&
+            policy?.privacy.map((text) => (
               <div key={text.id} className="mb-8">
                 <h3 className="text-xl font-semibold mb-4">{text?.title}</h3>
                 <div className="prose prose-lg max-w-none">
@@ -48,7 +48,7 @@ export default async function Page() {
                       u: ({ node, ...props }) => <span {...props} className="underline" />,
                       br: ({ node, ...props }) => <span {...props} className="py-2 block" />,
                     }}
-                  >{text.description}</ReactMarkdown>
+                  >{text?.description}</ReactMarkdown>
                 </div>
               </div>
             ))}
